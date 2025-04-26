@@ -4,9 +4,16 @@ import numpy as np
 import pickle
 
 # Load model and preprocessor
-model = pickle.load(open('delivery_model.pkl', 'rb'))
-scaler = pickle.load(open('scaler.pkl', 'rb'))
-expected_features = pickle.load(open('feature_columns.pkl', 'rb'))
+#model = pickle.load(open('delivery_model.pkl', 'rb'))
+#scaler = pickle.load(open('scaler.pkl', 'rb'))
+#expected_features = pickle.load(open('feature_columns.pkl', 'rb'))
+import joblib
+
+# Load the scaler
+scaler = joblib.load('scaler.pkl')
+
+# Load the model
+model = joblib.load('delivery_model.pkl')
 
 # UI
 st.title("🚚 Food Delivery Time Predictor")
